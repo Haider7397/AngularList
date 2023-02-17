@@ -58,6 +58,7 @@
 
 .pad{
     padding-bottom: 5px;
+    justify-content: center;
 }
 
 .informationContent{
@@ -97,7 +98,18 @@
     }
 }
 
-@media screen and (min-width: 600px) and (max-width: 975px) {
+@media screen and (min-width: 991px) and (max-width: 999px) {
+    .marginer{
+        margin: 12px;
+        width: 67%;
+    }
+
+    .padder{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 990px) {
     .marginer{
         margin: 12px;
         width: 89%;
@@ -108,10 +120,21 @@
     }
 }
 
-@media screen and (min-width: 500px) and (max-width: 770px) {
+@media screen and (min-width: 500px) and (max-width: 765px) {
     .marginer{
         margin: 12px;
         width: 95%;
+    }
+
+    .padder{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 766px) and (max-width: 800px) {
+    .marginer{
+        margin: 12px;
+        width: 89%;
     }
 
     .padder{
@@ -180,4 +203,8 @@
 .backgrounder{
     background-color: #f1f1f1;
     border: 2px solid black;
+}
+
+.autoWidth{
+    width: auto;
 }
