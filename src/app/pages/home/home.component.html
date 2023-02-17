@@ -1,41 +1,51 @@
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12 position"  *ngFor="let item of data">
-            <div class="index">
-                <h6 class="indexContent">{{item.index}}</h6>
-            </div>
-            <div class="picture">
-                <div class="pictureContent">
-                    <img class="image" [src]=item.image>
-                    <div class="title">
-                        <h6>{{item.title}}</h6>
-                    </div>
+    <div class="row pad" *ngFor="let item of data, let i = index">
+        <div class="col-12 ">
+            <div class="position">
+                <div class="index">
+                    <h6 class="indexContent">{{item.index}}</h6>
                 </div>
-            </div>
-            <div class="information informationContent fontSize">
-                <div class="row">
-                    <div class="col-6">
-                        <ul class="list">
-                            <li *ngFor="let tag of item.tags">
-                                {{tag}}
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-6">
-                        Price(€): {{item.price}}
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-6" >
-                        <div *ngFor="let _ of [].constructor(item.rating)">
-                            <i class="fas fa-star"></i>
+                <div class="picture">
+                    <div class="pictureContent">
+                        <img class="image" [src]=item.image>
+                        <div class="title">
+                            <h6>{{item.title}}</h6>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <button class="btn btn-primary fontSize">Details</button>
+                </div>
+                <div class="information informationContent fontSize">
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list">
+                                <li *ngFor="let tag of item.tags">
+                                    {{tag}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            Price(€): {{item.price}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 stars">
+                            <div *ngFor="let _ of [].constructor(item.rating)">
+                                <i class="fa fa-star iconColor" aria-hidden="true"></i>
+                            </div>
+                            <div *ngFor="let _ of [].constructor(5-item.rating)">
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-primary fontSize" *ngIf="!item.details" (click)="show(i)">Details</button>
+                            <button class="btn btn-primary fontSize" *ngIf="item.details" (click)="hide(i)">Hide</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="description" *ngIf="item.details">
+                {{item.description}}
+            </div>
         </div>
+
     </div>
 </div>

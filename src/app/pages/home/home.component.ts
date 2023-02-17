@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Todo } from 'src/app/models/todo.model';
+import { Data } from 'src/app/models/todo.model';
 import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class HomeComponent implements OnInit {
 
-  public data:Todo[]=[];
+  public data:Data[]=[];
 
   constructor(private service:TodoService) { }
 
@@ -24,8 +24,22 @@ export class HomeComponent implements OnInit {
 
   getData(){
     this.service.getData().subscribe((resp)=>{
-      this.data = resp;
-      console.log(this.data)
+      this.addDetails(resp);
     })
+  }
+
+  addDetails(resp:any){
+    this.data.forEach((elem:any)=>{
+      elem.details = false;
+    })
+    this.data = resp;
+  }
+
+  show(index:number){
+    this.data[index].details = true;
+  }
+
+  hide(index:number){
+    this.data[index].details = false;
   }
 }
