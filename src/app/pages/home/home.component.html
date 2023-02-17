@@ -1,74 +1,181 @@
 <div class="container main">
-    <div class="row pad">
-        <div class="col-sm-12 col-md-12 col-xl-4 backgrounder marginer">
-            <div class="row">
-                <div class="col-xl-12 col-md-6 col-5 padder">
-                    <div class="filter">
-                        <i class="fa fa-th" aria-hidden="true"></i><span class="spanClass">Sorting</span>
-                    </div>
-                </div>
-                <div class="col-xl-12 col-md-6 col-7 padder">
-                    <div class="filter">
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                              <span class="input-group-text" id="basic-addon1">€</span>
-                            </div>
-                            <input type="text" class="form-control" placeholder="Price divider value" (change)="trackValue($event)">
-                          </div>
-                    </div>
-                </div>
-            </div>
+  <div class="row pad">
+    <div class="col-sm-12 col-md-12 col-xl-4 backgrounder marginer">
+      <div class="row">
+        <div class="col-xl-12 col-md-6 col-12 padder">
+          <div class="filter">
+            <i class="fa fa-th" aria-hidden="true"></i><span class="spanClass">Sorting</span>
+          </div>
         </div>
-        <div class="col-sm-12 col-md-12 col-xl-8 mx-auto">
-            <div class="row pad" *ngFor="let item of data, let i = index">
-                <div class="col-12 autoWidth">
-                    <div class="position">
-                        <div class="index">
-                            <h6 class="indexContent">{{item.index}}</h6>
-                        </div>
-                        <div class="picture">
-                            <div class="pictureContent">
-                                <img class="image" [src]=item.image>
-                                <div class="title">
-                                    <h6>{{item.title}}</h6>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="information informationContent fontSize">
-                            <div class="row">
-                                <div class="col-6">
-                                    <ul class="list">
-                                        <li *ngFor="let tag of item.tags">
-                                            {{tag}}
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="col-6">
-                                    Price(€): {{item.price}}
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6 stars">
-                                    <div *ngFor="let _ of [].constructor(item.rating)">
-                                        <i class="fa fa-star iconColor" aria-hidden="true"></i>
-                                    </div>
-                                    <div *ngFor="let _ of [].constructor(5-item.rating)">
-                                        <i class="fa fa-star"></i>
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <button class="btn btn-primary fontSize" *ngIf="!item.details" (click)="show(i)">Details</button>
-                                    <button class="btn btn-primary fontSize" *ngIf="item.details" (click)="hide(i)">Hide</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="description" *ngIf="item.details">
-                        {{item.description}}
-                    </div>
-                </div>
-        
+        <div class="col-xl-12 col-md-6 col-12 padder">
+          <div class="filter">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">€</span>
+              </div>
+              <input type="text" class="form-control" placeholder="Price divider value" (change)="trackValue($event)">
             </div>
+          </div>
         </div>
+      </div>
     </div>
+    <div class="col-sm-12 col-md-12 col-xl-8 mx-auto displayer">
+      <div class="row pad" *ngFor="let item of data, let i = index">
+        <div class="col-12 autoWidth">
+          <div class="position">
+            <div class="index">
+              <h6 class="indexContent">{{item.index}}</h6>
+            </div>
+            <div class="picture">
+              <div class="pictureContent">
+                <img class="image" [src]=item.image>
+                <div class="title">
+                  <h6>{{item.title}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="information informationContent fontSize">
+              <div class="row">
+                <div class="col-6">
+                  <ul class="list">
+                    <li *ngFor="let tag of item.tags">
+                      {{tag}}
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-6">
+                  Price(€): {{item.price}}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6 stars">
+                  <div *ngFor="let _ of [].constructor(item.rating)">
+                    <i class="fa fa-star iconColor" aria-hidden="true"></i>
+                  </div>
+                  <div *ngFor="let _ of [].constructor(5-item.rating)">
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <button class="btn btn-primary fontSize" *ngIf="!item.details" (click)="show(i)">Details</button>
+                  <button class="btn btn-primary fontSize" *ngIf="item.details" (click)="hide(i)">Hide</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="description" *ngIf="item.details">
+            {{item.description}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-xl-8 mx-auto displayer2">
+      <div class="row pad" *ngFor="let item of data, let i = index">
+        <div class="col-12 autoWidth">
+          <div class="position">
+            <div class="index">
+              <h6 class="indexContent">{{item.index}}</h6>
+            </div>
+            <div class="information informationContent fontSize">
+              <div class="row">
+                <div class="col-4">
+                  <div class="pictureContent">
+                    <img class="image" [src]=item.image>
+                    <div class="title">
+                      <h6>{{item.title}}</h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <ul class="list">
+                    <li *ngFor="let tag of item.tags">
+                      {{tag}}
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-4">
+                  Price(€): {{item.price}}
+                </div>
+              </div>
+              <div class="row content">
+                <div class="col-4 stars">
+                  <div *ngFor="let _ of [].constructor(item.rating)">
+                    <i class="fa fa-star iconColor" aria-hidden="true"></i>
+                  </div>
+                  <div *ngFor="let _ of [].constructor(5-item.rating)">
+                    <i class="fa fa-star"></i>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <button class="btn btn-primary fontSize" *ngIf="!item.details" (click)="show(i)">Details</button>
+                  <button class="btn btn-primary fontSize" *ngIf="item.details" (click)="hide(i)">Hide</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="description" *ngIf="item.details">
+            {{item.description}}
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-12 col-xl-8 mx-auto displayer3 paddler">
+      <div class="row pad" *ngFor="let item of data, let i = index">
+        <div class="col-12 bordersmall">
+          <div class="row">
+            <div class="col-12">
+              <div class="">
+                <h6 class="smalltitle">{{item.index}}</h6>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="picPadding">
+                <img class="image" [src]=item.image>
+                <div class="title">
+                  <h6>{{item.title}}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="starsmall">
+                <div *ngFor="let _ of [].constructor(item.rating)">
+                  <i class="fa fa-star iconColor" aria-hidden="true"></i>
+                </div>
+                <div *ngFor="let _ of [].constructor(5-item.rating)">
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="pricer">
+                Price(€): {{item.price}}
+              </div>
+              <div class="pricer">
+                <button class="btn btn-primary fontSize" *ngIf="!item.details" (click)="show(i)">Details</button>
+                <button class="btn btn-primary fontSize" *ngIf="item.details" (click)="hide(i)">Hide</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 description" *ngIf="item.details">
+          <div class="row">
+            <div class="col-6">
+              <ul class="list">
+                <li *ngFor="let tag of item.tags">
+                  {{tag}}
+                </li>
+              </ul>
+            </div>
+            <div class="col-6">
+              {{item.description}}
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
 </div>

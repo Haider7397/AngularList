@@ -31,7 +31,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 200px;
-    
+
 }
 
 .pictureContent{
@@ -40,7 +40,7 @@
 }
 
 .title{
-    padding:10px
+    padding:10px;
 }
 
 .position{
@@ -48,13 +48,6 @@
     padding: 0px;
 }
 
-.information{
-    text-align: center;
-    border: 2px solid black;
-    border-left: none;
-    width: 400px;
-    
-}
 
 .pad{
     padding-bottom: 5px;
@@ -71,12 +64,14 @@
 }
 
 .description{
-    border: 2px solid black;
+    border: 2px solid #87ceeb;
     border-top: none;
     width: 640px;
+    padding: 10px;
+    background: #d7f3fe;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1201px) {
     .filter{
         padding: 20px;
     }
@@ -85,9 +80,15 @@
         background-color: #f1f1f1;
         height: 200px;
     }
+    .information{
+      text-align: center;
+      border: 2px solid black;
+      border-left: none;
+      width: 400px;
+    }
 }
 
-@media screen and (min-width: 1000px) and (max-width: 1199px) {
+@media screen and (min-width: 1000px) and (max-width: 1200px) {
     .marginer{
         margin: 12px;
         width: 639px;
@@ -95,6 +96,13 @@
 
     .padder{
         padding: 10px;
+    }
+
+    .information{
+      text-align: center;
+      border: 2px solid black;
+      border-left: none;
+      width: 600px;
     }
 }
 
@@ -107,9 +115,15 @@
     .padder{
         padding: 10px;
     }
+    .information{
+      text-align: center;
+      border: 2px solid black;
+      border-left: none;
+      width: 600px;
+    }
 }
 
-@media screen and (min-width: 600px) and (max-width: 990px) {
+@media screen and (min-width: 771px) and (max-width: 990px) {
     .marginer{
         margin: 12px;
         width: 89%;
@@ -118,6 +132,37 @@
     .padder{
         padding: 10px;
     }
+
+    .information{
+      text-align: center;
+      border: 2px solid black;
+      border-left: none;
+      width: 600px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 770px) {
+  .marginer{
+      margin: 12px;
+      width: 89%;
+  }
+
+  .padder{
+      padding: 10px;
+  }
+
+  .information{
+    text-align: center;
+    border: 2px solid black;
+    border-left: none;
+    width: 600px;
+  }
+  .description{
+    border: 2px solid #87ceeb;
+    border-top: none;
+    background: #d7f3fe;
+    width: 100%;
+}
 }
 
 @media screen and (min-width: 500px) and (max-width: 765px) {
@@ -154,9 +199,11 @@
     }
 
     .description{
-        border: 2px solid black;
+        border: 2px solid #87ceeb;
         border-top: none;
         width: 100%;
+        padding: 10px;
+        background: #d7f3fe;
     }
 
     .padder{
@@ -178,10 +225,17 @@
         padding: 10px;
     }
 
+    .paddler{
+      padding-left: 21px;
+      padding-right: 21px;
+    }
+
     .description{
-        border: 2px solid black;
-        border-top: none;
-        width: 100%;
+      border: 2px solid #87ceeb;
+      border-top: none;
+      width: 100%;
+      padding: 10px;
+      background: #d7f3fe;
     }
 }
 
@@ -207,4 +261,67 @@
 
 .autoWidth{
     width: auto;
+}
+
+.content{
+  justify-content: end;
+}
+
+.bordersmall{
+  border:2px solid black
+}
+
+.smalltitle{
+  padding: 15px;
+}
+
+@media screen and (max-width: 1201px) {
+  .displayer {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+
+@media screen and (min-width: 1201px){
+  .displayer2 {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+@media screen and (max-width: 601px){
+  .displayer2 {
+    visibility: hidden;
+    display: none;
+  }
+  .paddler{
+    padding-left: 26px;
+    padding-right: 26px;
+  }
+}
+
+@media screen and (min-width: 601px){
+  .displayer3 {
+    visibility: hidden;
+    display: none;
+  }
+}
+
+.picPadding{
+  padding-left: 20px;
+  padding-right: 20px;
+
+}
+
+.starsmall{
+  display: flex;
+  justify-content: end;
+  padding-right: 10px;
+}
+
+.pricer{
+  display: flex;
+  justify-content: end;
+  padding: 10px;
 }
