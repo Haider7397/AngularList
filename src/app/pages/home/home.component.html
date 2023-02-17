@@ -1,0 +1,41 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 position"  *ngFor="let item of data">
+            <div class="index">
+                <h6 class="indexContent">{{item.index}}</h6>
+            </div>
+            <div class="picture">
+                <div class="pictureContent">
+                    <img class="image" [src]=item.image>
+                    <div class="title">
+                        <h6>{{item.title}}</h6>
+                    </div>
+                </div>
+            </div>
+            <div class="information informationContent fontSize">
+                <div class="row">
+                    <div class="col-6">
+                        <ul class="list">
+                            <li *ngFor="let tag of item.tags">
+                                {{tag}}
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-6">
+                        Price(€): {{item.price}}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6" >
+                        <div *ngFor="let _ of [].constructor(item.rating)">
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <button class="btn btn-primary fontSize">Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
