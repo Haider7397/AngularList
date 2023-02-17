@@ -3,6 +3,10 @@
     height: auto;
 }
 
+.main{
+    padding-top: 20px !important;
+}
+
 .index{
     text-align: center;
     border: 2px solid black;
@@ -53,7 +57,7 @@
 }
 
 .pad{
-    padding: 5px;
+    padding-bottom: 5px;
 }
 
 .informationContent{
@@ -71,10 +75,59 @@
     width: 640px;
 }
 
+@media screen and (min-width: 1200px) {
+    .filter{
+        padding: 20px;
+    }
 
-@media screen and (max-width: 576px) {
+    .backgrounder{
+        background-color: #f1f1f1;
+        height: 200px;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1199px) {
+    .marginer{
+        margin: 12px;
+        width: 639px;
+    }
+
+    .padder{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 975px) {
+    .marginer{
+        margin: 12px;
+        width: 89%;
+    }
+
+    .padder{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 770px) {
+    .marginer{
+        margin: 12px;
+        width: 95%;
+    }
+
+    .padder{
+        padding: 10px;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
     .fontSize{
       font-size: 16px;
+    }
+
+    .marginer{
+        margin: 12px;
+        width: 94%;
     }
 
     .description{
@@ -82,11 +135,24 @@
         border-top: none;
         width: 100%;
     }
+
+    .padder{
+        padding: 10px;
+    }
 }
 
 @media screen and (max-width: 300px) {
     .fontSize{
       font-size: 10px;
+    }
+
+    .marginer{
+        margin: 12px;
+        width: 92%;
+    }
+
+    .padder{
+        padding: 10px;
     }
 
     .description{
@@ -105,4 +171,13 @@
 
 .iconColor{
     color:#ffd43b
+}
+
+.spanClass{
+    padding: 25px;
+}
+
+.backgrounder{
+    background-color: #f1f1f1;
+    border: 2px solid black;
 }

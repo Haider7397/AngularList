@@ -9,37 +9,50 @@ import { TodoService } from 'src/app/services/todo.service';
 })
 export class HomeComponent implements OnInit {
 
-  public data:Data[]=[];
+  public data: Data[] = [];
 
-  constructor(private service:TodoService) { }
+  constructor(private service: TodoService) { }
 
   ngOnInit(): void {
     this.getData();
   }
 
-  createRange(number:number){
+  createRange(number: number) {
     return new Array(number).fill(0)
       .map((n, index) => index + 1);
   }
 
-  getData(){
-    this.service.getData().subscribe((resp)=>{
+  getData() {
+    this.service.getData().subscribe((resp) => {
       this.addDetails(resp);
     })
   }
 
-  addDetails(resp:any){
-    this.data.forEach((elem:any)=>{
+  addDetails(resp: any) {
+    this.data.forEach((elem: any) => {
       elem.details = false;
     })
     this.data = resp;
   }
 
-  show(index:number){
+  show(index: number) {
     this.data[index].details = true;
   }
 
-  hide(index:number){
+  hide(index: number) {
     this.data[index].details = false;
   }
+
+  trackValue(event: any) {
+    console.log(event.target.value)
+    if (event.target.value == "") {
+      this.getData();
+    }
+    else {
+      this.data = this.data.filter((elem: any) => {
+        return elem.price < parseInt(event.target.value)
+      })
+    }
+  }
+
 }
